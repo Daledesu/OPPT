@@ -1,2 +1,1 @@
-# OPPT
-FInals in WEBDEV2
+Project of Jean Dale Maliksi
