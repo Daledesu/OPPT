@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+</head>
+
+	<body>
+
+		<div class="topnav">
+ 		 <a class="active" href="" name="Mainpage">Home</a>
+ 		 <a href="{% url 'data' %}" name="data">Data</a>
+		 <a href="#contact">About</a>
+		</div>
+
+<body>
+	<table id="data" width="55%" style="border:1px solid darkred" style="text-align: center;">
+		<tr style="text-align: center;">
+			<th>Student ID</th>
+			<th>Name</th>
+			<th>Student Status</th>
+			<th>TiC</th>
+			<th>School</th>
+		</tr>
+		{% for deliver in StuInfo %}
+		<tr style="text-align: center;">
+			<td>{{forloop.counter}}: {{deliver.studentID}}</td>
+			<td>{{deliver.name}}</td>
+			<td>{{deliver.studentstatus}}</td>
+			<td>{{deliver.professor}}</td>
+			<td>{{deliver.school}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+
+</html>
